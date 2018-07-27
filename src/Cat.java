@@ -1,19 +1,28 @@
-public class Cat{
-    private String name;
+public class Cat extends Pet{
     private String sex;
     private String breed;
     private boolean inCafe;
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     //default
     public Cat(){
         inCafe=true;
+        type="Cat";
     }
 
     //name and sex
     public Cat(String name, String sex){
         this.name=name;
         this.sex=sex;
-        inCafe = true;
+        this.inCafe = true;
+        this.type="Cat";
     }
 
     //all fields
@@ -22,6 +31,7 @@ public class Cat{
         this.sex=sex;
         this.breed=breed;
         this.inCafe=inCafe;
+        this.type="Cat";
     }
 
     public String getName() {
@@ -50,8 +60,21 @@ public class Cat{
     }
 
 
-    static void takeAwayFromCafe(Cat cat) {
-        cat.setInCafe(cat.isInCafe()?false:true);
+    public void takeAwayFromCafe(Person owner) {
+        if (isInCafe()){
+            setInCafe(false);
+            setOwner(owner);
+        }
+    }
+
+    @Override
+    public void speak(){
+        System.out.println("Meow");
+    }
+
+    @Override
+    public void info(){
+        System.out.println(Cat.class.getName()+" goes Meow");
     }
 
 }
