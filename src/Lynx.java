@@ -1,16 +1,26 @@
-public class Lynx extends Animal {
-    public Lynx() {
-        this.type = "Lynx";
+public class Lynx implements Animal {
+
+    private String speakWord;
+
+    public Lynx(String speakWord) {
+        this.speakWord = speakWord;
     }
 
-    @Override
+    public String getSpeakWord() {
+        return speakWord;
+    }
+
+    public void setSpeakWord(String speakWord) {
+        this.speakWord = speakWord;
+    }
+
     public void speak(){
-        System.out.println("I'm a Lynx");
+        System.out.println(getSpeakWord());
     }
 
-    @Override
+
     public void info(){
-        System.out.println(Cat.class.getName()+" goes I'm a Lynx");
+        System.out.println(Cat.class.getName()+" goes "+getSpeakWord());
     }
 
 }

@@ -1,28 +1,10 @@
-public class Animal {
+interface Animal {
 
-    protected String speakWord;
-    protected String type;
+    String getSpeakWord();
 
-    public Animal(String speakWord) {
-        this.speakWord = speakWord;
-    }
+    void  setSpeakWord(String speakWord);
 
-    public Animal() {
-    }
+    void speak();
 
-    public String getSpeakWord() {
-        return speakWord;
-    }
-
-    public void setSpeakWord(String speakWord) {
-        this.speakWord = speakWord;
-    }
-
-    public void speak(){
-        System.out.println(speakWord);
-    }
-
-    public void info(){
-        System.out.println(Animal.class.getName()+" + "+speakWord);
-    }
+    void info();
 }
