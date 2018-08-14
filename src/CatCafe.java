@@ -2,11 +2,11 @@ import java.util.List;
 
 public class CatCafe {
     private String adress;
-    private Cat[] cats;
+    private List<Cat> cats;
     private String timeOfWork;
     private int catCounter;
 
-    public CatCafe(String adress,Cat[] cats, String timeOfWork, int catCounter) {
+    public CatCafe(String adress,List<Cat> cats, String timeOfWork, int catCounter) {
         this.adress = adress;
         this.cats = cats;
         this.timeOfWork = timeOfWork;

@@ -1,3 +1,6 @@
+import java.rmi.RemoteException;
+import java.util.zip.DataFormatException;
+
 public class Cat extends Pet{
     private String sex;
     private String breed;
@@ -61,11 +64,15 @@ public class Cat extends Pet{
 
 
     public void takeAwayFromCafe(Person owner) {
-        if (isInCafe()){
+        try {
+            if (isInCafe()) throw new MyException("Cat "+getName() +" already home");
             setInCafe(false);
             setOwner(owner);
+        } catch (MyException ex) {
+            ex.printMessage();
         }
     }
+
 
     @Override
     public void speak(){
